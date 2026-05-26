@@ -1,9 +1,8 @@
 #pragma once
 #include "Pet.h"
-#include <string>
-#include <iostream>
-using namespace std;
-class Dog : public Pet {
+
+class Dog : public Pet
+{
 private:
     string breed;
     int age;
@@ -11,7 +10,9 @@ private:
 public:
     Dog();
     Dog(string n, string b, int a);
+    Dog(const Dog& obj);
 
-    void showInfo();
+    void show() override;
+    void sound() override;
+    void type() override;
 };
-

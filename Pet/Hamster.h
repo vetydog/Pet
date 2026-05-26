@@ -1,16 +1,15 @@
 #pragma once
 #include "Pet.h"
 
-class Cat : public Pet
+class Hamster : public Pet
 {
 private:
-    string color;
-    int lives;
+    int wheelSpeed;
 
 public:
-    Cat();
-    Cat(string n, string c, int l);
-    Cat(const Cat& obj);
+    Hamster();
+    Hamster(string n, int w);
+    Hamster(const Hamster& obj);
 
     void show() override;
     void sound() override;

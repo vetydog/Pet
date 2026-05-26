@@ -1,15 +1,37 @@
 #include "Cat.h"
 
-Cat::Cat() : Pet(" "), color(" "), lives(0) {}
-Cat::Cat(string n, string c, int l) : Pet(n) {
+Cat::Cat() : Pet()
+{
+    color = "Unknown";
+    lives = 9;
+}
+
+Cat::Cat(string n, string c, int l) : Pet(n)
+{
     color = c;
     lives = l;
 }
 
-void Cat::showInfo() {
-    cout << "CAT\n";
-    showName();
+Cat::Cat(const Cat& obj) : Pet(obj)
+{
+    color = obj.color;
+    lives = obj.lives;
+}
+
+void Cat::show()
+{
+    cout << "CAT" << endl;
+    Pet::show();
     cout << "Color: " << color << endl;
     cout << "Lives: " << lives << endl;
-    cout << "Sound: Meow\n\n";
+}
+
+void Cat::sound()
+{
+    cout << "Sound: Meow" << endl;
+}
+
+void Cat::type()
+{
+    cout << "Type: Cat" << endl;
 }

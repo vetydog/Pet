@@ -1,11 +1,31 @@
 #include "Pet.h"
 
-Pet::Pet() : name(" ") {};
+Pet::Pet()
+{
+    name = "Unknown";
+}
 
-Pet::Pet(string n) {
+Pet::Pet(string n)
+{
     name = n;
 }
 
-void Pet::showName() {
+Pet::Pet(const Pet& obj)
+{
+    name = obj.name;
+}
+
+void Pet::setName(string n)
+{
+    name = n;
+}
+
+string Pet::getName()
+{
+    return name;
+}
+
+void Pet::show()
+{
     cout << "Name: " << name << endl;
 }
